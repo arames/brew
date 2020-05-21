@@ -96,7 +96,7 @@ module OS
     # if available. Otherwise, the latest SDK is returned.
 
     def sdk(v = nil)
-      @locator ||= if CLT.installed? && CLT.provides_sdk?
+      @locator ||= if CLT.installed? && CLT.provides_sdk && false?
         CLTSDKLocator.new
       else
         XcodeSDKLocator.new
